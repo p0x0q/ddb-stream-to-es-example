@@ -1,9 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const streamUtils_1 = require("./streamUtils");
-const esDomainUrl = 'https://search-takanezawa-search-es02-iymsyyvieimxtdpgy2ftalayce.ap-northeast-1.es.amazonaws.com/';
+const esDomainUrl = process.env['ES_ENDPOINT'];
 const indexName = 'search_movie_v1';
 const typeName = 'doc';
+
 function handler(event) {
     const records = event.Records;
     const keyName = 'movie_id';
